@@ -1,0 +1,64 @@
+model,id,country,series,date,description,mean,lo95,lo80,hi80,hi95,latent_F_mean,freeze_date,recorded_on
+M0 pure external,rps_nov2026,US,us_rps_any,2026-11-15,"RPS wave, November 2026",62.02,58.31,59.81,64.19,65.54,57.3,2026-11-01,2026-11-02
+M0 pure external,rps_feb2027,US,us_rps_any,2027-02-15,"RPS wave, February 2027",63,59.22,60.71,65.28,66.58,58.19,2026-11-01,2026-11-02
+M0 pure external,rps_may2027,US,us_rps_any,2027-05-15,"RPS wave, May 2027",63.83,59.87,61.42,66.22,67.53,58.95,2026-11-01,2026-11-02
+M0 pure external,ofcom_2026,UK,uk_ofcom,2026-10-30,"Ofcom tracker, autumn 2026 (16-64)",68.6,59.47,63.69,73.37,76.51,56.97,2026-11-01,2026-11-02
+M0 pure external,deloitte_2027,UK,uk_deloitte,2027-05-15,"Deloitte Digital Consumer Trends, May 2027",63.32,50.2,55.54,71.01,75.2,58.96,2026-11-01,2026-11-02
+M0 pure external,F_us_dec2027,US,latent,2027-12-15,"Latent F, US, December 2027",60.39,54.58,56.65,64.19,66.58,60.39,2026-11-01,2026-11-02
+M0 pure external,F_uk_dec2027,UK,latent,2027-12-15,"Latent F, UK, December 2027",60.56,51.86,55.11,66.34,70.3,60.56,2026-11-01,2026-11-02
+M0 pure external,F_us_dec2030,US,latent,2030-12-01,"Latent F, US, December 2030",63.39,56.21,58.77,68.09,71.18,63.39,2026-11-01,2026-11-02
+M0 pure external,F_uk_dec2030,UK,latent,2030-12-01,"Latent F, UK, December 2030",64.13,53.27,57.25,71.49,77.44,64.13,2026-11-01,2026-11-02
+M1 Bass,rps_nov2026,US,us_rps_any,2026-11-15,"RPS wave, November 2026",61.9,58.13,59.67,64.11,65.43,57.13,2026-11-01,2026-11-02
+M1 Bass,rps_feb2027,US,us_rps_any,2027-02-15,"RPS wave, February 2027",62.83,59,60.53,65.1,66.37,57.99,2026-11-01,2026-11-02
+M1 Bass,rps_may2027,US,us_rps_any,2027-05-15,"RPS wave, May 2027",63.58,59.48,61.09,66.02,67.38,58.7,2026-11-01,2026-11-02
+M1 Bass,ofcom_2026,UK,uk_ofcom,2026-10-30,"Ofcom tracker, autumn 2026 (16-64)",68.5,59.61,63.53,73.22,76.34,56.89,2026-11-01,2026-11-02
+M1 Bass,deloitte_2027,UK,uk_deloitte,2027-05-15,"Deloitte Digital Consumer Trends, May 2027",63.08,49.98,55.1,70.81,75.14,58.78,2026-11-01,2026-11-02
+M1 Bass,F_us_dec2027,US,latent,2027-12-15,"Latent F, US, December 2027",60.03,54.04,56.19,63.96,66.27,60.03,2026-11-01,2026-11-02
+M1 Bass,F_uk_dec2027,UK,latent,2027-12-15,"Latent F, UK, December 2027",60.29,51.84,54.79,66.11,70.03,60.29,2026-11-01,2026-11-02
+M1 Bass,F_us_dec2030,US,latent,2030-12-01,"Latent F, US, December 2030",62.68,55.42,57.98,67.52,70.45,62.68,2026-11-01,2026-11-02
+M1 Bass,F_uk_dec2030,UK,latent,2030-12-01,"Latent F, UK, December 2030",63.46,53.01,56.63,70.87,76.54,63.46,2026-11-01,2026-11-02
+M4 generalised Bass,rps_nov2026,US,us_rps_any,2026-11-15,"RPS wave, November 2026",63.34,60.06,61.26,65.47,66.8,57.79,2026-11-01,2026-11-02
+M4 generalised Bass,rps_feb2027,US,us_rps_any,2027-02-15,"RPS wave, February 2027",64.69,60.97,62.32,67.08,68.56,59.01,2026-11-01,2026-11-02
+M4 generalised Bass,rps_may2027,US,us_rps_any,2027-05-15,"RPS wave, May 2027",65.85,61.67,63.18,68.48,70.01,60.06,2026-11-01,2026-11-02
+M4 generalised Bass,ofcom_2026,UK,uk_ofcom,2026-10-30,"Ofcom tracker, autumn 2026 (16-64)",70.51,63.83,66.77,74.17,76.51,56.8,2026-11-01,2026-11-02
+M4 generalised Bass,deloitte_2027,UK,uk_deloitte,2027-05-15,"Deloitte Digital Consumer Trends, May 2027",66.34,56.33,60.47,71.92,74.94,59.7,2026-11-01,2026-11-02
+M4 generalised Bass,F_us_dec2027,US,latent,2027-12-15,"Latent F, US, December 2027",62.21,56.09,58.09,66.36,68.66,62.21,2026-11-01,2026-11-02
+M4 generalised Bass,F_uk_dec2027,UK,latent,2027-12-15,"Latent F, UK, December 2027",62.25,55.43,57.7,67.17,70.48,62.25,2026-11-01,2026-11-02
+M4 generalised Bass,F_us_dec2030,US,latent,2030-12-01,"Latent F, US, December 2030",68.07,57.47,60.21,76.3,79.65,68.07,2026-11-01,2026-11-02
+M4 generalised Bass,F_uk_dec2030,UK,latent,2030-12-01,"Latent F, UK, December 2030",69.51,57.61,61.34,77.32,81.07,69.51,2026-11-01,2026-11-02
+M5 time-varying q,rps_nov2026,US,us_rps_any,2026-11-15,"RPS wave, November 2026",61.93,58.21,59.65,64.11,65.47,57.25,2026-11-01,2026-11-02
+M5 time-varying q,rps_feb2027,US,us_rps_any,2027-02-15,"RPS wave, February 2027",62.85,59.01,60.49,65.13,66.54,58.11,2026-11-01,2026-11-02
+M5 time-varying q,rps_may2027,US,us_rps_any,2027-05-15,"RPS wave, May 2027",63.63,59.63,61.16,66.08,67.62,58.82,2026-11-01,2026-11-02
+M5 time-varying q,ofcom_2026,UK,uk_ofcom,2026-10-30,"Ofcom tracker, autumn 2026 (16-64)",68.47,59.22,63.38,73.15,76.51,57.18,2026-11-01,2026-11-02
+M5 time-varying q,deloitte_2027,UK,uk_deloitte,2027-05-15,"Deloitte Digital Consumer Trends, May 2027",63.2,49.92,55.28,70.95,75.52,59.08,2026-11-01,2026-11-02
+M5 time-varying q,F_us_dec2027,US,latent,2027-12-15,"Latent F, US, December 2027",60.15,54.17,56.34,64.06,66.66,60.15,2026-11-01,2026-11-02
+M5 time-varying q,F_uk_dec2027,UK,latent,2027-12-15,"Latent F, UK, December 2027",60.58,51.64,54.97,66.49,70.48,60.58,2026-11-01,2026-11-02
+M5 time-varying q,F_us_dec2030,US,latent,2030-12-01,"Latent F, US, December 2030",62.73,55.6,58.04,67.58,70.8,62.73,2026-11-01,2026-11-02
+M5 time-varying q,F_uk_dec2030,UK,latent,2030-12-01,"Latent F, UK, December 2030",63.69,52.85,56.7,71.29,76.87,63.69,2026-11-01,2026-11-02
+M6 dynamic m,rps_nov2026,US,us_rps_any,2026-11-15,"RPS wave, November 2026",61.86,57.94,59.6,64.08,65.36,57.18,2026-11-01,2026-11-02
+M6 dynamic m,rps_feb2027,US,us_rps_any,2027-02-15,"RPS wave, February 2027",62.79,58.92,60.43,65.09,66.51,58.02,2026-11-01,2026-11-02
+M6 dynamic m,rps_may2027,US,us_rps_any,2027-05-15,"RPS wave, May 2027",63.52,59.28,61.07,65.93,67.37,58.72,2026-11-01,2026-11-02
+M6 dynamic m,ofcom_2026,UK,uk_ofcom,2026-10-30,"Ofcom tracker, autumn 2026 (16-64)",68.42,59.42,63.2,73.24,76.67,57.08,2026-11-01,2026-11-02
+M6 dynamic m,deloitte_2027,UK,uk_deloitte,2027-05-15,"Deloitte Digital Consumer Trends, May 2027",63.17,50.08,55.22,70.97,75.44,58.95,2026-11-01,2026-11-02
+M6 dynamic m,F_us_dec2027,US,latent,2027-12-15,"Latent F, US, December 2027",60.04,54.04,56.29,63.84,66.09,60.04,2026-11-01,2026-11-02
+M6 dynamic m,F_uk_dec2027,UK,latent,2027-12-15,"Latent F, UK, December 2027",60.44,52.04,54.88,66.24,70.17,60.44,2026-11-01,2026-11-02
+M6 dynamic m,F_us_dec2030,US,latent,2030-12-01,"Latent F, US, December 2030",62.62,55.4,58.03,67.29,70.31,62.62,2026-11-01,2026-11-02
+M6 dynamic m,F_uk_dec2030,UK,latent,2030-12-01,"Latent F, UK, December 2030",63.58,53.29,56.62,70.87,76.4,63.58,2026-11-01,2026-11-02
+M2 logistic,rps_nov2026,US,us_rps_any,2026-11-15,"RPS wave, November 2026",52.93,41.05,45.6,59.98,63.99,40.73,2026-11-01,2026-11-02
+M2 logistic,rps_feb2027,US,us_rps_any,2027-02-15,"RPS wave, February 2027",52.84,41.27,45.66,59.79,63.88,40.73,2026-11-01,2026-11-02
+M2 logistic,rps_may2027,US,us_rps_any,2027-05-15,"RPS wave, May 2027",52.81,41.42,45.76,59.62,63.44,40.73,2026-11-01,2026-11-02
+M2 logistic,ofcom_2026,UK,uk_ofcom,2026-10-30,"Ofcom tracker, autumn 2026 (16-64)",62.79,55.25,59.2,66.13,68.37,40.01,2026-11-01,2026-11-02
+M2 logistic,deloitte_2027,UK,uk_deloitte,2027-05-15,"Deloitte Digital Consumer Trends, May 2027",42.22,19.43,28.14,56.12,64.57,40.01,2026-11-01,2026-11-02
+M2 logistic,F_us_dec2027,US,latent,2027-12-15,"Latent F, US, December 2027",40.73,37.37,38.36,42.71,53.79,40.73,2026-11-01,2026-11-02
+M2 logistic,F_uk_dec2027,UK,latent,2027-12-15,"Latent F, UK, December 2027",40.01,36.21,37.21,43.16,52.27,40.01,2026-11-01,2026-11-02
+M2 logistic,F_us_dec2030,US,latent,2030-12-01,"Latent F, US, December 2030",40.73,37.37,38.36,42.71,53.79,40.73,2026-11-01,2026-11-02
+M2 logistic,F_uk_dec2030,UK,latent,2030-12-01,"Latent F, UK, December 2030",40.01,36.21,37.21,43.16,52.27,40.01,2026-11-01,2026-11-02
+M3 Gompertz,rps_nov2026,US,us_rps_any,2026-11-15,"RPS wave, November 2026",58.93,51.3,55.33,62.38,64.25,54.3,2026-11-01,2026-11-02
+M3 Gompertz,rps_feb2027,US,us_rps_any,2027-02-15,"RPS wave, February 2027",59.14,51.56,55.34,62.67,64.56,54.52,2026-11-01,2026-11-02
+M3 Gompertz,rps_may2027,US,us_rps_any,2027-05-15,"RPS wave, May 2027",59.25,51.28,55.34,62.85,64.83,54.66,2026-11-01,2026-11-02
+M3 Gompertz,ofcom_2026,UK,uk_ofcom,2026-10-30,"Ofcom tracker, autumn 2026 (16-64)",64.72,53.77,58.86,70.09,73.64,51.5,2026-11-01,2026-11-02
+M3 Gompertz,deloitte_2027,UK,uk_deloitte,2027-05-15,"Deloitte Digital Consumer Trends, May 2027",54.51,32.4,40.76,67.47,74.59,51.86,2026-11-01,2026-11-02
+M3 Gompertz,F_us_dec2027,US,latent,2027-12-15,"Latent F, US, December 2027",54.85,41.39,49.13,59.89,62.49,54.85,2026-11-01,2026-11-02
+M3 Gompertz,F_uk_dec2027,UK,latent,2027-12-15,"Latent F, UK, December 2027",52.06,38.58,41.47,60.51,65.87,52.06,2026-11-01,2026-11-02
+M3 Gompertz,F_us_dec2030,US,latent,2030-12-01,"Latent F, US, December 2030",55,41.39,49.19,60.11,62.75,55,2026-11-01,2026-11-02
+M3 Gompertz,F_uk_dec2030,UK,latent,2030-12-01,"Latent F, UK, December 2030",52.22,38.58,41.47,60.93,66.64,52.22,2026-11-01,2026-11-02
