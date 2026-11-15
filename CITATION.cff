@@ -8,6 +8,12 @@ authors:
     orcid: "https://orcid.org/0000-0001-9952-2404"
     affiliation: "ISEG, Universidade de Lisboa; IPAM Lisboa"
 version: 1.0.0
+doi: 10.5281/zenodo.24263132
+repository-code: "https://github.com/ricabreu/genai-diffusion-us-uk"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24263133
+    description: "Archived release v1.0.0"
 date-released: 2026-11-15
 license: MIT
 keywords:

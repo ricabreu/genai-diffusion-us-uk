@@ -1,5 +1,7 @@
 # The diffusion of generative AI in the United States and the United Kingdom
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24263132.svg)](https://doi.org/10.5281/zenodo.24263132)
+
 Code and data for a study that estimates Bass-family diffusion models of the
 first use of generative AI by working-age adults in the United States and the
 United Kingdom, and forecasts it to 2030. The repository accompanies a journal
@@ -141,9 +143,9 @@ error and differences between platforms.
 The forecasts in `output/forecasts/` were produced from data frozen on
 1 November 2026 and recorded with an MD5 checksum on 2 November 2026, before
 the survey waves they refer to were released. See
-[`output/forecasts/README.md`](output/forecasts/README.md). The date of the
-first public commit of this repository is the date from which the record can be
-verified by others.
+[`output/forecasts/README.md`](output/forecasts/README.md). The repository
+has been public since 15 November 2026, and release v1.0.0, which contains the
+forecast file, is archived at Zenodo: https://doi.org/10.5281/zenodo.24263133.
 
 ## Data and licences
 
@@ -175,8 +177,12 @@ totals.
 ## Citation
 
 Abreu, R. (2026). *The diffusion of generative AI in the United States and the
-United Kingdom: Code and data* [Computer software]. See `CITATION.cff`. The
-reference to the article will be added here when it is published.
+United Kingdom: Code and data* (v1.0.0) [Computer software]. Zenodo.
+https://doi.org/10.5281/zenodo.24263133
+
+The DOI 10.5281/zenodo.24263132 always points to the latest version. See also
+`CITATION.cff`. The reference to the article will be added here when it is
+published.
 
 ## Licence
 
