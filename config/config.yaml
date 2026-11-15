@@ -1,0 +1,210 @@
+# Study 4 (Chapter 7): diffusion of generative AI in the US and UK
+# Central configuration for the Python data pipeline and the R/Stan estimation.
+# All paths are relative to the repository root.
+
+project:
+  freeze_date: "2026-11-01"     # data freeze: later releases are kept for prospective tests
+  launch_date: "2022-11-30"     # public release of ChatGPT
+  t0_date: "2022-12-01"         # t = 0 (months are counted from this date)
+  days_per_month: 30.4375
+
+paths:
+  raw: data/raw
+  external: data/external
+  interim: data/interim
+  processed: data/processed
+  output: output
+
+# ---------------------------------------------------------------------------
+# FRED (Federal Reserve Bank of St. Louis). Requires an API key in the
+# environment variable FRED_API_KEY (free: https://fred.stlouisfed.org/docs/api/api_key.html).
+# The vintage is fixed at the freeze date (realtime_start = realtime_end = freeze_date).
+# ---------------------------------------------------------------------------
+fred:
+  series:
+    - id: RPSGENAIUSAGESHAREALL
+      use: rps_any
+    - id: RPSGENAIUSAGESHARENONWORK
+      use: rps_nonwork
+    - id: ITNETUSERP2USA
+      use: internet_us
+    - id: ITNETUSERP2GBR
+      use: internet_uk
+  # RPS observations are labelled at the start of each quarter on FRED; the
+  # fieldwork took place in the middle month of the quarter (tracker website).
+  rps_quarter_to_fieldwork_month: {1: 2, 4: 5, 7: 8, 10: 11}
+  rps_n_per_wave: 4400          # >40,000 respondents over 9 waves (tracker website)
+
+# ---------------------------------------------------------------------------
+# Ofcom Adults' Media Literacy Tracker, respondent-level CSV files
+# (statistical release calendars 2025 and 2026). Place files in data/raw/ofcom/.
+# ---------------------------------------------------------------------------
+ofcom:
+  waves:
+    - year: 2024
+      file: data/raw/ofcom/ofcom-adults-media-literacy-core-survey-2024-respondent-level-data.csv
+      fieldwork: ["2024-09-30", "2024-11-13"]
+      aware_var: A6
+      use_var: A8
+      module_var: null          # all respondents received the AI questions
+      weight_var: WT2
+      age_var: S3
+      sex_var: S4
+      age_codes: {2: "16-24", 3: "25-34", 4: "35-44", 5: "45-54", 6: "55-64", 7: "65+"}
+      item: "Have you ever used AI models such as ChatGPT or Bard?"
+      published: {all: 31, "16-24": 53, "25-34": 48, men: 38, women: 25}
+    - year: 2025
+      file: data/raw/ofcom/ofcom-adults-media-literacy-2025-respondent-level-data.csv
+      fieldwork: ["2025-09-29", "2025-11-28"]
+      aware_var: A1
+      use_var: A2
+      module_var: MODULEA       # AI questions in Module 1 (random half of the sample)
+      weight_var: WT
+      age_var: S3
+      sex_var: S4
+      age_codes: {2: "16-24", 3: "25-34", 4: "35-44", 5: "45-54", 6: "55-64", 7: "65-74", 8: "75+"}
+      item: "Have you ever used AI applications such as ChatGPT, CoPilot or Gemini?"
+      published: {all: 54, "16-24": 79, "25-34": 74, men: 57, women: 51}
+  working_age_codes_max: 6      # S3 codes 2..6 = 16-64
+
+# ---------------------------------------------------------------------------
+# Pew Research Center, American Trends Panel. Download each wave (free account,
+# data licence) and unzip into data/raw/pew/ so that the .sav files are found
+# by the pattern "ATP W<wave>.sav". The files must not be redistributed.
+# ---------------------------------------------------------------------------
+pew:
+  dir: data/raw/pew
+  waves:
+    - wave: W123
+      fieldwork: ["2023-03-13", "2023-03-19"]
+      items:
+        - {name: chatgpt_purpose, type: purpose_net, vars: [GPT2_a_W123, GPT2_b_W123, GPT2_c_W123], form: null,
+           label: "Used ChatGPT for entertainment, to learn something new or for tasks at work", published: 14}
+    - wave: W131
+      fieldwork: ["2023-07-17", "2023-07-23"]
+      items:
+        - {name: chatgpt_ever, type: single, vars: [GPTUSE_W131], form: 1, label: "Have you ever used ChatGPT?", published: 18}
+        - {name: chatgpt_purpose, type: purpose_net, vars: [GPT2_a_W131, GPT2_b_W131, GPT2_c_W131], form: 2,
+           label: "Used ChatGPT for entertainment, to learn something new or for tasks at work", published: null}
+    - wave: W142
+      fieldwork: ["2024-02-07", "2024-02-11"]
+      items:
+        - {name: chatgpt_ever, type: single, vars: [GPTUSE_W142], form: 1, label: "Have you ever used ChatGPT?", published: 23}
+        - {name: chatgpt_purpose, type: purpose_net, vars: [GPT2_a_W142, GPT2_b_W142, GPT2_c_W142], form: 2,
+           label: "Used ChatGPT for entertainment, to learn something new or for tasks at work", published: null}
+    - wave: W152
+      fieldwork: ["2024-08-12", "2024-08-18"]
+      items:
+        - {name: chatbot_ever, type: single, vars: [CHATUSE_W152], form: null,
+           label: "Have you ever used an AI chatbot like ChatGPT, Gemini or Copilot?", published: 33}
+    - wave: W164
+      fieldwork: ["2025-02-24", "2025-03-02"]
+      items:
+        - {name: chatgpt_ever, type: single, vars: [GPTUSE_W164], form: 1, label: "Have you ever used ChatGPT?", published: 34}
+        - {name: chatgpt_purpose, type: purpose_net, vars: [GPT2_a_W164, GPT2_b_W164, GPT2_c_W164], form: 2,
+           label: "Used ChatGPT for entertainment, to learn something new or for tasks at work", published: null}
+  age_var: F_AGECAT
+  age_codes: {1: "18-29", 2: "30-49", 3: "50-64", 4: "65+"}
+  working_age_codes: [1, 2, 3]
+
+# ---------------------------------------------------------------------------
+# Harmonisation (Section 7.3.6)
+# ---------------------------------------------------------------------------
+harmonisation:
+  design_effect: 2.0            # for estimates available only in published form
+  default_n_eff: 1000           # when no sample size is published
+  anchor_se: 0.005              # F(0) = 0 at launch, entered as an observation
+  pew2026_age_weights: {"18-29": 0.20, "30-49": 0.34, "50-64": 0.24, "65+": 0.22}
+  # Series definitions: object factor (lambda) priors and method breaks.
+  # is_ref = 1 fixes lambda = 1 (reference measure: ever used any GenAI tool,
+  # target population). break_date: first fieldwork date after a change of method.
+  series:
+    us_rps_any:        {country: US, measure: current_use_any, population: "18-64", role: estimation, is_ref: 0, lambda_mu: 1.00, lambda_sd: 0.15}
+    us_rps_nonwork:    {country: US, measure: current_use_outside_work, population: "18-64", role: robustness, is_ref: 0, lambda_mu: 0.85, lambda_sd: 0.15}
+    us_pew_chatgpt:    {country: US, measure: ever_chatgpt, population: "18-64", role: estimation, is_ref: 0, lambda_mu: 0.90, lambda_sd: 0.10}
+    us_pew_chatgpt_purpose: {country: US, measure: chatgpt_purpose, population: "18-64", role: estimation, is_ref: 0, lambda_mu: 0.99, lambda_sd: 0.12}
+    us_pew_chatbot:    {country: US, measure: ever_any, population: "18-64", role: estimation, is_ref: 1, lambda_mu: 1.00, lambda_sd: 0.01}
+    us_pew2026_chatbot_approx: {country: US, measure: use_any_2026_wording, population: "18-64 (approx.)", role: robustness, is_ref: 0, lambda_mu: 1.00, lambda_sd: 0.15}
+    us_pew2026_chatgpt_approx: {country: US, measure: use_chatgpt_2026_wording, population: "18-64 (approx.)", role: robustness, is_ref: 0, lambda_mu: 0.90, lambda_sd: 0.15}
+    # All-adult series (secondary analysis, Section 7.3.1)
+    us_pew_all_chatbot:  {country: US, measure: ever_any, population: "18+", role: secondary, is_ref: 1, lambda_mu: 1.00, lambda_sd: 0.01}
+    us_pew_all_chatgpt:  {country: US, measure: ever_chatgpt, population: "18+", role: secondary, is_ref: 0, lambda_mu: 0.90, lambda_sd: 0.10}
+    us_pew_all_purpose:  {country: US, measure: chatgpt_purpose, population: "18+", role: secondary, is_ref: 0, lambda_mu: 0.99, lambda_sd: 0.12}
+    us_pew_all_2026_chatbot: {country: US, measure: use_any_2026_wording, population: "18+", role: secondary, is_ref: 0, lambda_mu: 1.00, lambda_sd: 0.15}
+    us_pew_all_2026_chatgpt: {country: US, measure: use_chatgpt_2026_wording, population: "18+", role: secondary, is_ref: 0, lambda_mu: 0.90, lambda_sd: 0.15}
+    uk_ofcom:          {country: UK, measure: ever_any, population: "16-64", role: estimation, is_ref: 1, lambda_mu: 1.00, lambda_sd: 0.01, break_date: "2025-01-01"}
+    uk_ofcom_16plus:   {country: UK, measure: ever_any, population: "16+", role: estimation, is_ref: 0, lambda_mu: 0.83, lambda_sd: 0.05}
+    uk_ofcom_all:      {country: UK, measure: ever_any, population: "16+", role: secondary, is_ref: 1, lambda_mu: 1.00, lambda_sd: 0.01, break_date: "2025-01-01"}
+    uk_deloitte:       {country: UK, measure: ever_any, population: "16-75", role: estimation, is_ref: 0, lambda_mu: 0.95, lambda_sd: 0.10}
+    uk_online_nation:  {country: UK, measure: ever_any, population: "internet users 16+", role: check, is_ref: 0, lambda_mu: 1.00, lambda_sd: 0.15}
+    uk_dsit:           {country: UK, measure: past3m_chatbot, population: "online adults", role: check, is_ref: 0, lambda_mu: 1.00, lambda_sd: 0.20}
+    anchor:            {country: ALL, measure: ever_any, population: target, role: estimation, is_ref: 1, lambda_mu: 1.00, lambda_sd: 0.01}
+
+# Secondary analysis for all adults (US 18+, UK 16+): which rows enter and how
+# the series definitions change.
+secondary_analysis:
+  include_roles: [secondary]
+  include_series: [uk_deloitte, uk_ofcom_16plus, anchor]
+  relabel: {uk_ofcom_16plus: uk_ofcom_all}
+  overrides: {uk_deloitte: {lambda_mu: 1.05, lambda_sd: 0.10}}
+
+# ---------------------------------------------------------------------------
+# Covariates (Section 7.3.7)
+# ---------------------------------------------------------------------------
+covariates:
+  horizon_end: "2030-12-01"      # last month of the grid (forecasts to Dec 2030)
+  shock_types: [competitors_2023, access, embedded, feature]
+  shock_form: step               # step: 1 from the first event of each type onwards
+
+# ---------------------------------------------------------------------------
+# Estimation (Section 7.4)
+# ---------------------------------------------------------------------------
+estimation:
+  substeps_per_month: 4                # Heun steps of 0.25 months; max error vs closed-form Bass < 0.005 pp
+  chains: 4
+  iter_warmup: 1000
+  iter_sampling: 2000
+  adapt_delta: 0.99
+  seed: 20261101
+  priors:
+    # Hyperpriors centred on meta-analytic benchmarks (Sultan et al., 1990:
+    # p = 0.03, q = 0.38 per year), converted to months, with wide scales.
+    logp_mu: -6.0                # log(0.03 / 12) = -5.99
+    logp_sd: 2.0
+    logq_mu: -3.45               # log(0.38 / 12) = -3.45
+    logq_sd: 2.0
+    logitm_mu: 1.1               # logit(0.75)
+    logitm_sd: 1.0
+    tau_sd: 0.5                  # between-country scale (half-normal)
+    logkappa_mu: 0.405           # log(1.5)
+    logkappa_sd: 0.5
+    delta_sd: 0.10               # level shift after a change of method
+  models:
+    bass_family: {M0: 0, M1: 1, M4: 4, M5: 5, M6: 6}
+    sigmoid_family: {M2: 2, M3: 3}
+
+# Rolling-origin validation (Section 7.4.3)
+validation:
+  origins: ["2025-02-15", "2025-05-15", "2025-08-15", "2025-11-15", "2026-02-15", "2026-05-15"]
+  horizon_months: 12
+  chains: 2
+  iter_warmup: 500
+  iter_sampling: 500
+
+# Robustness re-estimations (Section 7.4.5, Table 7.8): fewer draws per scenario
+robustness:
+  chains: 2
+  iter_warmup: 500
+  iter_sampling: 500
+
+# Prospective forecasts, recorded before the releases appear (Section 7.4.3)
+forecast_targets:
+  - {id: rps_nov2026, series: us_rps_any, country: US, date: "2026-11-15", description: "RPS wave, November 2026"}
+  - {id: rps_feb2027, series: us_rps_any, country: US, date: "2027-02-15", description: "RPS wave, February 2027"}
+  - {id: rps_may2027, series: us_rps_any, country: US, date: "2027-05-15", description: "RPS wave, May 2027"}
+  - {id: ofcom_2026, series: uk_ofcom, country: UK, date: "2026-10-30", description: "Ofcom tracker, autumn 2026 (16-64)"}
+  - {id: deloitte_2027, series: uk_deloitte, country: UK, date: "2027-05-15", description: "Deloitte Digital Consumer Trends, May 2027"}
+  - {id: F_us_dec2027, series: latent, country: US, date: "2027-12-15", description: "Latent F, US, December 2027"}
+  - {id: F_uk_dec2027, series: latent, country: UK, date: "2027-12-15", description: "Latent F, UK, December 2027"}
+  - {id: F_us_dec2030, series: latent, country: US, date: "2030-12-01", description: "Latent F, US, December 2030"}
+  - {id: F_uk_dec2030, series: latent, country: UK, date: "2030-12-01", description: "Latent F, UK, December 2030"}

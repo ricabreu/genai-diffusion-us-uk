@@ -1,0 +1,21 @@
+date,country,type,event,url,status
+2022-11-30,US,launch,Public release of ChatGPT (t = 0),https://en.wikipedia.org/wiki/ChatGPT,verified
+2022-11-30,UK,launch,Public release of ChatGPT (t = 0),https://en.wikipedia.org/wiki/ChatGPT,verified
+2023-02-07,US,competitors_2023,Bing Chat preview (waiting list),https://blogs.microsoft.com/blog/2023/02/07/reinventing-search-with-a-new-ai-powered-microsoft-bing-and-edge-your-copilot-for-the-web/,verified
+2023-02-07,UK,competitors_2023,Bing Chat preview (waiting list),https://blogs.microsoft.com/blog/2023/02/07/reinventing-search-with-a-new-ai-powered-microsoft-bing-and-edge-your-copilot-for-the-web/,verified
+2023-03-14,US,competitors_2023,GPT-4 released (paid tier),https://techcrunch.com/2023/03/14/openai-releases-gpt-4-ai-that-it-claims-is-state-of-the-art/,verified
+2023-03-14,UK,competitors_2023,GPT-4 released (paid tier),https://techcrunch.com/2023/03/14/openai-releases-gpt-4-ai-that-it-claims-is-state-of-the-art/,verified
+2023-03-21,US,competitors_2023,Google Bard opened to users (waiting list),https://siliconangle.com/2023/03/21/google-starts-opening-access-bard-chatbot-us-uk/,verified
+2023-03-21,UK,competitors_2023,Google Bard opened to users (waiting list),https://siliconangle.com/2023/03/21/google-starts-opening-access-bard-chatbot-us-uk/,verified
+2023-09-26,US,embedded,Copilot added to Windows 11,https://www.ghacks.net/?p=202332,verified
+2023-09-26,UK,embedded,Copilot added to Windows 11,https://www.ghacks.net/?p=202332,verified
+2024-04-01,US,access,ChatGPT usable without an account,https://openai.com/index/start-using-chatgpt-instantly/,verified
+2024-04-01,UK,access,ChatGPT usable without an account,https://openai.com/index/start-using-chatgpt-instantly/,verified
+2024-05-14,US,embedded,Google AI Overviews rolled out to all users in search,https://www.techmeme.com/240514/p32,verified
+2024-08-15,UK,embedded,Google AI Overviews launched in search,https://9to5google.com/2024/08/15/google-search-ai-overviews-countries/,verified
+2024-10-09,UK,embedded,Meta AI launched on Facebook Instagram WhatsApp and Messenger,https://www.silicon.co.uk/e-innovation/meta-ai-chatbot-launches-in-uk-on-facebook-instagram-whatsapp-583517,verified
+2024-12-11,UK,embedded,Apple Intelligence in UK English (iOS 18.2) with ChatGPT integration,https://mezha.ua/en/2024/12/11/stable-version-of-ios-18-2-with-new-features-for-iphone-released/,verified
+2025-03-25,US,feature,Image generation with GPT-4o added to ChatGPT,https://openai.com/blog/introducing-4o-image-generation/,verified
+2025-03-25,UK,feature,Image generation with GPT-4o added to ChatGPT,https://openai.com/blog/introducing-4o-image-generation/,verified
+,US,embedded,Apple Intelligence in US English (iOS 18.1),,to_verify
+,US,embedded,Meta AI in Facebook Instagram WhatsApp and Messenger (US),,to_verify
