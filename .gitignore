@@ -1,0 +1,27 @@
+# Raw data: licensed or re-downloadable (see data/raw/README.md)
+data/raw/**
+!data/raw/README.md
+
+# Model fits and compiled Stan executables
+output/fits/
+*.rds
+stan/bass_family
+stan/sigmoid_family
+stan/*.exe
+stan/*.hpp
+
+# R and Python clutter
+.Rhistory
+.RData
+.Rproj.user/
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+.DS_Store
+
+# Run logs
+logs/
+
+# Resume checkpoints of the validation and robustness runs
+output/checkpoints/

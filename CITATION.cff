@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite it as below. The reference to the accompanying article will be added on publication."
+type: software
+title: "The diffusion of generative AI in the United States and the United Kingdom: Code and data"
+authors:
+  - family-names: Abreu
+    given-names: Ricardo
+    orcid: "https://orcid.org/0000-0001-9952-2404"
+    affiliation: "ISEG, Universidade de Lisboa; IPAM Lisboa"
+version: 1.0.0
+date-released: 2026-11-15
+license: MIT
+keywords:
+  - generative AI
+  - technology diffusion
+  - Bass model
+  - technological forecasting
+  - hierarchical Bayesian models
+  - Stan

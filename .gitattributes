@@ -1,0 +1,5 @@
+* text=auto
+# Registered forecasts: keep the bytes exactly as recorded (checksum)
+output/forecasts/*.csv -text
+output/forecasts/*.md5 -text
+*.png binary
