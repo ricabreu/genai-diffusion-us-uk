@@ -1,0 +1,9 @@
+series,item,age_group,value_pct,fieldwork_start,fieldwork_end,n_total,url,accessed
+us_pew2026_chatbot_approx,Use AI chatbots (2026 wording),18-29,66,2026-02-17,2026-02-23,5119,https://www.pewresearch.org/internet/2026/06/17/how-opinions-and-use-of-ai-differ-by-age/,2026-11-01
+us_pew2026_chatbot_approx,Use AI chatbots (2026 wording),30-49,61,2026-02-17,2026-02-23,5119,https://www.pewresearch.org/internet/2026/06/17/how-opinions-and-use-of-ai-differ-by-age/,2026-11-01
+us_pew2026_chatbot_approx,Use AI chatbots (2026 wording),50-64,42,2026-02-17,2026-02-23,5119,https://www.pewresearch.org/internet/2026/06/17/how-opinions-and-use-of-ai-differ-by-age/,2026-11-01
+us_pew2026_chatbot_approx,Use AI chatbots (2026 wording),65+,23,2026-02-17,2026-02-23,5119,https://www.pewresearch.org/internet/2026/06/17/how-opinions-and-use-of-ai-differ-by-age/,2026-11-01
+us_pew2026_chatgpt_approx,Use ChatGPT (2026 wording),18-29,61,2026-02-17,2026-02-23,5119,https://www.pewresearch.org/internet/2026/06/17/how-opinions-and-use-of-ai-differ-by-age/,2026-11-01
+us_pew2026_chatgpt_approx,Use ChatGPT (2026 wording),30-49,55,2026-02-17,2026-02-23,5119,https://www.pewresearch.org/internet/2026/06/17/how-opinions-and-use-of-ai-differ-by-age/,2026-11-01
+us_pew2026_chatgpt_approx,Use ChatGPT (2026 wording),50-64,37,2026-02-17,2026-02-23,5119,https://www.pewresearch.org/internet/2026/06/17/how-opinions-and-use-of-ai-differ-by-age/,2026-11-01
+us_pew2026_chatgpt_approx,Use ChatGPT (2026 wording),65+,19,2026-02-17,2026-02-23,5119,https://www.pewresearch.org/internet/2026/06/17/how-opinions-and-use-of-ai-differ-by-age/,2026-11-01
