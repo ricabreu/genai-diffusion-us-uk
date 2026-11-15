@@ -1,0 +1,22 @@
+name: checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Python scripts compile
+        run: python -m compileall -q python
+      - name: Registered forecast file matches its checksum
+        run: python python/check_forecast_checksum.py
+      - name: Article figures are reproduced from the saved tables
+        run: |
+          pip install pandas numpy matplotlib
+          python python/06_paper_figures.py
