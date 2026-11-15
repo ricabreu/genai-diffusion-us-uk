@@ -1,0 +1,20 @@
+series,country,measure,population,role,is_ref,lambda_mu,lambda_sd,break_date,has_break
+us_rps_any,US,current_use_any,18-64,estimation,0,1.0,0.15,,0
+us_rps_nonwork,US,current_use_outside_work,18-64,robustness,0,0.85,0.15,,0
+us_pew_chatgpt,US,ever_chatgpt,18-64,estimation,0,0.9,0.1,,0
+us_pew_chatgpt_purpose,US,chatgpt_purpose,18-64,estimation,0,0.99,0.12,,0
+us_pew_chatbot,US,ever_any,18-64,estimation,1,1.0,0.01,,0
+us_pew2026_chatbot_approx,US,use_any_2026_wording,18-64 (approx.),robustness,0,1.0,0.15,,0
+us_pew2026_chatgpt_approx,US,use_chatgpt_2026_wording,18-64 (approx.),robustness,0,0.9,0.15,,0
+us_pew_all_chatbot,US,ever_any,18+,secondary,1,1.0,0.01,,0
+us_pew_all_chatgpt,US,ever_chatgpt,18+,secondary,0,0.9,0.1,,0
+us_pew_all_purpose,US,chatgpt_purpose,18+,secondary,0,0.99,0.12,,0
+us_pew_all_2026_chatbot,US,use_any_2026_wording,18+,secondary,0,1.0,0.15,,0
+us_pew_all_2026_chatgpt,US,use_chatgpt_2026_wording,18+,secondary,0,0.9,0.15,,0
+uk_ofcom,UK,ever_any,16-64,estimation,1,1.0,0.01,2025-01-01,1
+uk_ofcom_16plus,UK,ever_any,16+,estimation,0,0.83,0.05,,0
+uk_ofcom_all,UK,ever_any,16+,secondary,1,1.0,0.01,2025-01-01,1
+uk_deloitte,UK,ever_any,16-75,estimation,0,0.95,0.1,,0
+uk_online_nation,UK,ever_any,internet users 16+,check,0,1.0,0.15,,0
+uk_dsit,UK,past3m_chatbot,online adults,check,0,1.0,0.2,,0
+anchor,ALL,ever_any,target,estimation,1,1.0,0.01,,0
